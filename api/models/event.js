@@ -2,6 +2,18 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
+const Content = new Schema({
+  header: {
+    type: String
+  },
+  subheader: {
+    type: String
+  },
+  content: {
+    type: String
+  }
+}, { _id: false });
+
 const Highlight = new Schema({
   title: {
     type: String
@@ -29,6 +41,9 @@ const EventSchema = new Schema({
   date_description: {
     type: String
   },
+  ticket_price: {
+    type: Number
+  },
   event_time: {
     type: String,
     require: true
@@ -49,10 +64,7 @@ const EventSchema = new Schema({
   event_access: {
     type: String
   },
-  event_content: [{
-    type: String,
-    require: true
-  }],
+  event_content: [Content],
   event_highlight: [Highlight],
   event_description: {
     type: String,
