@@ -1,7 +1,9 @@
 const express = require("express");
 const router = express.Router();
-
+const passport = require('passport');
 const EventController = require("../controllers/eventController");
+
+router.use(passport.authenticate("jwt", { session: false }));
 
 router.get("/", EventController.getEvents);
 

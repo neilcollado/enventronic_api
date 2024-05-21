@@ -81,6 +81,7 @@ exports.updateUser = async (req, res) => {
     const updateFields = {
       "name.firstName": user.name.firstName || userDB.name.firstName,
       "name.lastName": user.name.lastName || userDB.name.lastName,
+      username: user.username || userDB.username,
       email: user.email || userDB.email,
       password: userDB.password,
     };

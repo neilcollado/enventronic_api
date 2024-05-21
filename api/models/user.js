@@ -17,6 +17,10 @@ const Name = new Schema({
 
 const UserSchema = new Schema({
   name: Name,
+  username: { 
+    type: String, 
+    require: true 
+  },
   email: {
     type: String,
     unique: true,
